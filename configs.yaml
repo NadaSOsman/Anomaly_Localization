@@ -1,0 +1,25 @@
+model_opts:
+  model: Static
+  backbone: slowfast
+  num_heads: 4
+  ff_dim: 288
+  mapping_feat: 288
+  feat_size: 2304
+  MLP_dim: [288, 36]
+  normalize: True
+  generator: True
+  batch_size: 119 #total_train = 1547
+  val_batch_size: 287
+  dropout: 0.5
+  classifier_loss: binary_crossentropy
+  epochs: 100
+  optimizer: SGD
+  lr: 0.01
+  model_path: ./models
+  seq_len: 64
+  num_masks: 16
+  top_k: 8
+  data_path: ./features/slowfast_64/
+  balance: False
+  levels: []
+  model_name: 'hcamformer.h5'
